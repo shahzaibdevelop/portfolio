@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\PortfolioController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SkillController;
@@ -31,6 +32,14 @@ Route::group(['middleware' => 'adminAuth'], function(){
     Route::get('skill-edit/{id}',[SkillController::class,'skill_edit']);
     Route::post('edit-skill/{id}',[SkillController::class,'edit_skill']);
     Route::get('skill-delete/{id}',[SkillController::class,'skill_delete']);
+    // Portfolio 
+    Route::get('admin-portfolio',[PortfolioController::class,'admin_portfolio']);
+    Route::post('add-portfolio',[PortfolioController::class,'add_portfolio']);
+    Route::get('edit-portfolio/{id}',[PortfolioController::class,'edit_portfolio']);
+    Route::post('edit-portfolio/{id}',[PortfolioController::class,'portfolio_edit']);
+
+
+
 
 
 });

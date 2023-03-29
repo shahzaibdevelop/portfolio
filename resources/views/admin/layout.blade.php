@@ -33,7 +33,7 @@
     <!-- INTERNAL Switcher css -->
     <link href="{{asset('adminassets/switcher/css/switcher.css')}}" rel="stylesheet">
     <link href="{{asset('adminassets/switcher/demo.css')}}" rel="stylesheet">
-
+    @yield('style')
 </head>
 
 <body class="app sidebar-mini ltr light-mode">
@@ -161,7 +161,7 @@
                                         class="side-menu__label">Skills</span></a>
                             </li>
                             <li class="slide">
-                                <a class="side-menu__item has-link" data-bs-toggle="slide" href="#"><i
+                                <a class="side-menu__item has-link" data-bs-toggle="slide" href="admin-portfolio"><i
                                         class="side-menu__icon fe fe-home"></i><span
                                         class="side-menu__label">Portfolio</span></a>
                             </li>
@@ -1052,7 +1052,7 @@
 
     <!-- Switcher js -->
     <script src="{{asset('adminassets/switcher/js/switcher.js')}}"></script>
-
+@yield('script')
 </body>
 
 </html>
