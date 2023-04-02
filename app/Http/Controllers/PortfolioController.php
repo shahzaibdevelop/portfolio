@@ -73,13 +73,7 @@ class PortfolioController extends Controller
    }
 
    public function work_single($id){
-    // $portfolio = DB::table('portfolios')
-    // ->join('images', 'images.image_id', '=', 'portfolios.id')
-    // ->select(DB::raw('portfolios.id, SUBSTRING_INDEX(GROUP_CONCAT(DISTINCT images.path ORDER BY images.id SEPARATOR ";"), ";", 1) as path'), 'portfolios.*')
-    // ->where('images.type', 'portfolio')
-    // ->where('portfolios.id',$id)
-    // ->groupBy('portfolios.id')
-    // ->get();
+  
     $portfolio = DB::table('portfolios')
     ->join('images', 'images.image_id', '=', 'portfolios.id')
     ->select('portfolios.id', DB::raw('GROUP_CONCAT(DISTINCT images.path ORDER BY images.id SEPARATOR ";") as paths'), 'portfolios.*')
@@ -92,5 +86,15 @@ class PortfolioController extends Controller
 $paths = explode(';', $portfolio->paths);
 
     return view('work-single',get_defined_vars());
+   }
+
+   public function work(){
+    $portfolio = DB::table('portfolios')
+    ->join('images', 'images.image_id', '=', 'portfolios.id')
+    ->select(DB::raw('portfolios.id, SUBSTRING_INDEX(GROUP_CONCAT(DISTINCT images.path ORDER BY images.id SEPARATOR ";"), ";", 1) as path'), 'portfolios.*')
+    ->where('images.type', 'portfolio')
+    ->groupBy('portfolios.id')
+    ->get();
+    return view('works',get_defined_vars());
    }
 }

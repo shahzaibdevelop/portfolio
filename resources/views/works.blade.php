@@ -14,14 +14,14 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto" type="text/css" media="all" >
 
   <!-- CSS STYLES -->
-  <link rel="stylesheet" href="assets/css/vendors/bootstrap.css" type="text/css" media="all" >
-  <link rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.css" type="text/css" media="all" >
-  <link rel="stylesheet" href="assets/css/vendors/magnific-popup.css" type="text/css" media="all" >
-  <link rel="stylesheet" href="assets/css/vendors/splitting.css" type="text/css" media="all" >
-  <link rel="stylesheet" href="assets/css/vendors/swiper.css" type="text/css" media="all" >
-  <link rel="stylesheet" href="assets/css/vendors/animate.css" type="text/css" media="all" >
-  <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all" >
-  <link rel="stylesheet" href="assets/css/dark.css" type="text/css" media="all" >
+  <link rel="stylesheet" href="{{asset('assets/css/vendors/bootstrap.css')}}" type="text/css" media="all" >
+  <link rel="stylesheet" href="{{asset('assets/fonts/font-awesome/css/font-awesome.css')}}" type="text/css" media="all" >
+  <link rel="stylesheet" href="{{asset('assets/css/vendors/magnific-popup.css')}}" type="text/css" media="all" >
+  <link rel="stylesheet" href="{{asset('assets/css/vendors/splitting.css')}}" type="text/css" media="all" >
+  <link rel="stylesheet" href="{{asset('assets/css/vendors/swiper.css')}}" type="text/css" media="all" >
+  <link rel="stylesheet" href="{{asset('assets/css/vendors/animate.css')}}" type="text/css" media="all" >
+  <link rel="stylesheet" href="{{asset('assets/css/style.css')}}" type="text/css" media="all" >
+  <link rel="stylesheet" href="{{asset('assets/css/dark.css')}}" type="text/css" media="all" >
 
   <!-- Favicon -->
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -33,11 +33,11 @@
 	<div class="container-page">
 
 		<!-- Preloader -->
-		<div class="preloader">
-			<div class="centrize full-width">
+		<div class="preloader" >
+			<div class="centrize full-width" >
 				<div class="vertical-center">
-					<div class="spinner-logo">
-						<img src="assets/images/logo2.png" alt="Luique - Personal Portfolio HTML Template" >
+					<div class="spinner-logo" style="width:280px;height:auto;">
+						<img src="{{asset('assets/images/logo2.gif')}}" alt="Shahzaib Hassan" >
 						<div class="spinner-dot"></div>
 						<div class="spinner spinner-line"></div>
 					</div>
@@ -54,7 +54,7 @@
             <!-- logo -->
             <div class="logo">
               <a href="index.html">
-                <img width="228" height="38" src="assets/images/logo2.png" alt="" >
+                <img width="500px" height="500px"  src="{{asset('assets/images/logo2.gif')}}" alt="" >
               </a>
             </div>
 
@@ -197,152 +197,35 @@
           <div class="container">
 
             <div class="works-box">
-              <div class="filter-links scrolla-element-anim-1 scroll-animate" data-animate="active">
-                <a href="#" class="lui-subtitle active" data-href=".works-col"> All </a>
-                <a href="#" class="lui-subtitle" data-href=".sorting-ui-ux-design"> UI UX Design </a>
-                <a href="#" class="lui-subtitle" data-href=".sorting-photo"> Photography </a>
-                <a href="#" class="lui-subtitle" data-href=".sorting-development"> Development </a>
-                <a href="#" class="lui-subtitle" data-href=".sorting-branding"> Branding </a>
-              </div>
+             
               <div class="works-items works-masonry-items row">
+                @foreach ($portfolio as $portfolios )
+                  
                 <div class="works-col col-xs-12 col-sm-12 col-md-12 col-lg-12 sorting-branding sorting-photo ">
                   <div class="works-item scrolla-element-anim-1 scroll-animate" data-animate="active">
                     <div class="image">
                       <div class="img">
-                        <a href="work-single.html">
-                          <img decoding="async" src="assets/images/work4.jpeg" alt="Zorro" >
+                        <a href="#">
+                          <img decoding="async" src="{{asset('upload_images/'.$portfolios->path)}}"  >
                           <span class="overlay"></span>
                         </a>
                       </div>
                     </div>
                     <div class="desc">
-                      <span class="category"> Branding, Photography </span>
+                      <span class="category"> {{$portfolios->tags}} </span>
                       <h5 class="name">
-                        <a href="work-single.html">Zorro</a>
+                        <a href="work-single.html">{{$portfolios->title}}</a>
                       </h5>
                       <div class="text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                        <p>{{$portfolios->description}}</p>
                       </div>
-                      <a href="work-single.html" class="lnk">See project</a>
+                      <a href="work-single/{{$portfolios->id}}" class="lnk">See project</a>
                     </div>
                     <div class="bg-img" style="background-image: url(assets/images/pat-2.png);"></div>
                   </div>
                 </div>
-                <div class="works-col col-xs-12 col-sm-12 col-md-12 col-lg-12 sorting-branding sorting-ui-ux-design ">
-                  <div class="works-item scrolla-element-anim-1 scroll-animate" data-animate="active">
-                    <div class="image">
-                      <div class="img">
-                        <a href="work-single.html">
-                          <img decoding="async" src="assets/images/work2.jpeg" alt="Gooir" >
-                          <span class="overlay"></span>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="desc">
-                      <span class="category"> Branding, UI UX Design </span>
-                      <h5 class="name">
-                        <a href="work-single.html">Gooir</a>
-                      </h5>
-                      <div class="text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                      </div>
-                      <a href="work-single.html" class="lnk">See project</a>
-                    </div>
-                    <div class="bg-img" style="background-image: url(assets/images/pat-2.png);"></div>
-                  </div>
-                </div>
-                <div class="works-col col-xs-12 col-sm-12 col-md-12 col-lg-12 sorting-development sorting-ui-ux-design ">
-                  <div class="works-item scrolla-element-anim-1 scroll-animate" data-animate="active">
-                    <div class="image">
-                      <div class="img">
-                        <a href="work-single.html">
-                          <img decoding="async" src="assets/images/work7.jpg" alt="Explore" >
-                          <span class="overlay"></span>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="desc">
-                      <span class="category"> Development, UI UX Design </span>
-                      <h5 class="name">
-                        <a href="work-single.html">Explore</a>
-                      </h5>
-                      <div class="text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                      </div>
-                      <a href="work-single.html" class="lnk">See project</a>
-                    </div>
-                    <div class="bg-img" style="background-image: url(assets/images/pat-2.png);"></div>
-                  </div>
-                </div>
-                <div class="works-col col-xs-12 col-sm-12 col-md-12 col-lg-12 sorting-branding sorting-photo ">
-                  <div class="works-item scrolla-element-anim-1 scroll-animate" data-animate="active">
-                    <div class="image">
-                      <div class="img">
-                        <a href="work-single.html">
-                          <img decoding="async" src="assets/images/work1.jpeg" alt="Mozar" >
-                          <span class="overlay"></span>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="desc">
-                      <span class="category"> Branding, Photography </span>
-                      <h5 class="name">
-                        <a href="work-single.html">Mozar</a>
-                      </h5>
-                      <div class="text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                      </div>
-                      <a href="work-single.html" class="lnk">See project</a>
-                    </div>
-                    <div class="bg-img" style="background-image: url(assets/images/pat-2.png);"></div>
-                  </div>
-                </div>
-                <div class="works-col col-xs-12 col-sm-12 col-md-12 col-lg-12 sorting-development sorting-ui-ux-design ">
-                  <div class="works-item scrolla-element-anim-1 scroll-animate" data-animate="active">
-                    <div class="image">
-                      <div class="img">
-                        <a href="work-single.html">
-                          <img decoding="async" src="assets/images/single8.jpg" alt="Stay Fit" >
-                          <span class="overlay"></span>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="desc">
-                      <span class="category"> Development, UI UX Design </span>
-                      <h5 class="name">
-                        <a href="work-single.html">Stay Fit</a>
-                      </h5>
-                      <div class="text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                      </div>
-                      <a href="work-single.html" class="lnk">See project</a>
-                    </div>
-                    <div class="bg-img" style="background-image: url(assets/images/pat-2.png);"></div>
-                  </div>
-                </div>
-                <div class="works-col col-xs-12 col-sm-12 col-md-12 col-lg-12 sorting-development sorting-photo ">
-                  <div class="works-item scrolla-element-anim-1 scroll-animate" data-animate="active">
-                    <div class="image">
-                      <div class="img">
-                        <a href="work-single.html">
-                          <img decoding="async" src="assets/images/single6.jpg" alt="Kana" >
-                          <span class="overlay"></span>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="desc">
-                      <span class="category"> Development, Photography </span>
-                      <h5 class="name">
-                        <a href="work-single.html">Kana</a>
-                      </h5>
-                      <div class="text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                      </div>
-                      <a href="work-single.html" class="lnk">See project</a>
-                    </div>
-                    <div class="bg-img" style="background-image: url(assets/images/pat-2.png);"></div>
-                  </div>
-                </div>
+                @endforeach
+                
               </div>
             </div>
 
@@ -401,20 +284,20 @@
 	<!-- cursor -->
 	<div class="cursor"></div>
 
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.validate.min.js"></script>
-  <script src="assets/js/bootstrap.js"></script>
-  <script src="assets/js/swiper.js"></script>
-  <script src="assets/js/splitting.js"></script>
-  <script src="assets/js/jarallax.min.js"></script>
-  <script src="assets/js/magnific-popup.js"></script>
-  <script src="assets/js/imagesloaded.pkgd.js"></script>
-  <script src="assets/js/isotope.pkgd.js"></script>
-  <script src="assets/js/jquery.scrolla.js"></script>
-  <script src="assets/js/skrollr.js"></script>
-  <script src="assets/js/jquery.cookie.js"></script>
-  <script src="assets/js/typed.js"></script>
-  <script src="assets/js/common.js"></script>
+  <script src="{{asset('assets/js/jquery.min.js')}}"></script>
+  <script src="{{asset('assets/js/jquery.validate.min.js')}}"></script>
+  <script src="{{asset('assets/js/bootstrap.js')}}"></script>
+  <script src="{{asset('assets/js/swiper.js')}}"></script>
+  <script src="{{asset('assets/js/splitting.js')}}"></script>
+  <script src="{{asset('assets/js/jarallax.min.js')}}"></script>
+  <script src="{{asset('assets/js/magnific-popup.js')}}"></script>
+  <script src="{{asset('assets/js/imagesloaded.pkgd.js')}}"></script>
+  <script src="{{asset('assets/js/isotope.pkgd.js')}}"></script>
+  <script src="{{asset('assets/js/jquery.scrolla.js')}}"></script>
+  <script src="{{asset('assets/js/skrollr.js')}}"></script>
+  <script src="{{asset('assets/js/jquery.cookie.js')}}"></script>
+  <script src="{{asset('assets/js/typed.js')}}"></script>
+  <script src="{{asset('assets/js/common.js')}}"></script>
 
 </body>
 </html>

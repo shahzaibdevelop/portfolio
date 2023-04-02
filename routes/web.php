@@ -42,3 +42,5 @@ Route::group(['middleware' => 'adminAuth'], function(){
 Route::get('admin', [Controller::class,'login'])->name('admin_login');
 Route::post('login',[Controller::class,'loginAdmin']);
 Route::get('work-single/{id}',[PortfolioController::class,'work_single']);
+Route::get('work',[PortfolioController::class,'work']);
+

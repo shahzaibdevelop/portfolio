@@ -437,7 +437,7 @@
               
               </div>
               <div class="load-more-link">
-                <a href="works.html" class="btn scrolla-element-anim-1 scroll-animate" data-animate="active">
+                <a href="work" class="btn scrolla-element-anim-1 scroll-animate" data-animate="active">
                   <span>View More</span>
                 </a>
               </div>
