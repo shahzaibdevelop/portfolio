@@ -38,10 +38,7 @@ Route::group(['middleware' => 'adminAuth'], function(){
     Route::get('edit-portfolio/{id}',[PortfolioController::class,'edit_portfolio']);
     Route::post('edit-portfolio/{id}',[PortfolioController::class,'portfolio_edit']);
 
-
-
-
-
 });
 Route::get('admin', [Controller::class,'login'])->name('admin_login');
 Route::post('login',[Controller::class,'loginAdmin']);
+Route::get('work-single/{id}',[PortfolioController::class,'work_single']);

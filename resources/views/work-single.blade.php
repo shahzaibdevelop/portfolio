@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-US">
 <head>
-
+	
   <title>Luique - Personal Portfolio HTML Template - shared on themelock.com</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,14 +14,14 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto" type="text/css" media="all" >
 
   <!-- CSS STYLES -->
-  <link rel="stylesheet" href="assets/css/vendors/bootstrap.css" type="text/css" media="all" >
-  <link rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.css" type="text/css" media="all" >
-  <link rel="stylesheet" href="assets/css/vendors/magnific-popup.css" type="text/css" media="all" >
-  <link rel="stylesheet" href="assets/css/vendors/splitting.css" type="text/css" media="all" >
-  <link rel="stylesheet" href="assets/css/vendors/swiper.css" type="text/css" media="all" >
-  <link rel="stylesheet" href="assets/css/vendors/animate.css" type="text/css" media="all" >
-  <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all" >
-  <link rel="stylesheet" href="assets/css/dark.css" type="text/css" media="all" >
+  <link rel="stylesheet" href="{{asset('assets/css/vendors/bootstrap.css')}}" type="text/css" media="all" >
+  <link rel="stylesheet" href="{{asset('assets/fonts/font-awesome/css/font-awesome.css')}}" type="text/css" media="all" >
+  <link rel="stylesheet" href="{{asset('assets/css/vendors/magnific-popup.css')}}" type="text/css" media="all" >
+  <link rel="stylesheet" href="{{asset('assets/css/vendors/splitting.css')}}" type="text/css" media="all" >
+  <link rel="stylesheet" href="{{asset('assets/css/vendors/swiper.css')}}" type="text/css" media="all" >
+  <link rel="stylesheet" href="{{asset('assets/css/vendors/animate.css')}}" type="text/css" media="all" >
+  <link rel="stylesheet" href="{{asset('assets/css/style.css')}}" type="text/css" media="all" >
+  <link rel="stylesheet" href="{{asset('assets/css/dark.css')}}" type="text/css" media="all" >
 
   <!-- Favicon -->
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -33,11 +33,11 @@
 	<div class="container-page">
 
 		<!-- Preloader -->
-		<div class="preloader">
-			<div class="centrize full-width">
+		<div class="preloader" >
+			<div class="centrize full-width" >
 				<div class="vertical-center">
-					<div class="spinner-logo">
-						<img src="assets/images/logo2.png" alt="Luique - Personal Portfolio HTML Template" >
+					<div class="spinner-logo" style="width:280px;height:auto;">
+						<img src="{{asset('assets/images/logo2.gif')}}" alt="Shahzaib Hassan" >
 						<div class="spinner-dot"></div>
 						<div class="spinner spinner-line"></div>
 					</div>
@@ -54,7 +54,7 @@
             <!-- logo -->
             <div class="logo">
               <a href="index.html">
-                <img width="228" height="38" src="assets/images/logo2.png" alt="" >
+                <img width="500px" height="500px"  src="{{asset('assets/images/logo2.gif')}}" alt="" >
               </a>
             </div>
 
@@ -178,10 +178,10 @@
       	<div class="container">
           <div class="m-titles align-left">
             <h1 class="m-title splitting-text-anim-1 scroll-animate" data-splitting="words" data-animate="active">
-              <span>Zorro</span>
+              <span>{{$portfolio->title}}</span>
             </h1>
             <div class="m-subtitle splitting-text-anim-1 scroll-animate" data-splitting="words" data-animate="active">
-              <span>Branding, Photography</span>
+              <span>{{$portfolio->tags}}</span>
             </div>
           </div>
       	</div>
@@ -196,16 +196,13 @@
                 <div class="m-details">
                   <div class="details-label">
                     <span>Year:</span>
-                    <strong><span>2018</span></strong>
+                    <strong><span>{{$portfolio->year}}</span></strong>
                   </div>
                   <div class="details-label">
                     <span>Technology:</span>
-                    <strong><span>Photoshop, XD</span></strong>
+                    <strong><span>{{$portfolio->technology}}</span></strong>
                   </div>
-                  <div class="details-label">
-                    <span>Categories:</span>
-                    <strong><span>Photography, Branding</span></strong>
-                  </div>
+                
                 </div>
 
               </div>
@@ -229,7 +226,8 @@
         <!-- Image -->
         <div class="m-image-large">
           <div class="image">
-            <div class="img js-parallax" style="background-image: url(https://luique.bslthemes.com/wp-content/uploads/2021/11/single4.jpg);"></div>
+			
+            <div class="img js-parallax" style="background-image: url({{asset('upload_images/'.$paths[0])}});"></div>
           </div>
         </div>
 
@@ -250,17 +248,11 @@
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 
               <div class="post-content">
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &lsquo;Content here, content here&rsquo;, making it look like readable English.</p>
+                <p>{{$portfolio->description}}</p>
               </div>
 
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-
-              <div class="post-content">
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &lsquo;Content here, content here&rsquo;, making it look like readable English.</p>
-              </div>
-
-            </div>
+           
           </div>
 
 				</div>
@@ -273,36 +265,22 @@
           <!-- Section Gallery -->
       		<div class="m-gallery">
       			<div class="row">
+					@foreach ($paths as $path)
+						
+					<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						<div class="works-item">
+							<div class="image scrolla-element-anim-1 scroll-animate" data-animate="active">
+								<div class="img">
+									<a href="#" class="has-popup-image"><img decoding="async" src="{{asset('upload_images/'.$path)}}" alt="Item 1" loading="lazy"></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					@endforeach
 
-      				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-      					<div class="works-item">
-      						<div class="image scrolla-element-anim-1 scroll-animate" data-animate="active">
-      							<div class="img">
-      								<a href="assets/images/work5.jpeg" class="has-popup-image"><img decoding="async" src="assets/images/work5.jpeg" alt="Item 1" loading="lazy"></a>
-      							</div>
-      						</div>
-      					</div>
-      				</div>
+      				
 
-      				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-      					<div class="works-item">
-      						<div class="image scrolla-element-anim-1 scroll-animate" data-animate="active">
-      							<div class="img">
-      								<a href="assets/images/blog8.jpg" class="has-popup-image"><img decoding="async" src="assets/images/blog8.jpg" alt="Item 2" loading="lazy"></a>
-      							</div>
-      						</div>
-      					</div>
-      				</div>
-
-      				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-      					<div class="works-item">
-      						<div class="image scrolla-element-anim-1 scroll-animate" data-animate="active">
-      							<div class="img">
-      								<a href="assets/images/blog6.jpg" class="has-popup-image"><img decoding="async" src="assets/images/blog6.jpg" alt="Item 3" loading="lazy"></a>
-      							</div>
-      						</div>
-      					</div>
-      				</div>
+      				
 
       			</div>
       		</div>
@@ -310,57 +288,19 @@
 				</div>
       </div>
 
-      <!-- Section - Description -->
-			<section class="section section-inner">
-        <div class="container">
+     
 
-          <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
-              <div class="post-content">
-                <h4>Conclusion</h4>
-              </div>
-
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-
-              <div class="post-content">
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &lsquo;Content here, content here&rsquo;, making it look like readable English.</p>
-              </div>
-
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-
-              <div class="post-content">
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &lsquo;Content here, content here&rsquo;, making it look like readable English.</p>
-              </div>
-
-            </div>
-          </div>
-
-				</div>
-      </section>
-
-      <!-- Section - Video -->
-			<div class="section section-inner m-video-large">
-        <div class="video">
-          <div class="img js-parallax" style="background-image: url(assets/images/blog9.jpg);"></div>
-          <iframe class="js-video-iframe" data-src="https://www.youtube.com/embed/Gu6z6kIukgg?showinfo=0&amp;rel=0&amp;autoplay=1"></iframe>
-          <div class="play"></div>
-        </div>
-      </div>
+    
 
       <!-- Section - Navigation -->
 			<div class="section section-inner m-page-navigation">
     		<div class="container">
 					<div class="h-titles h-navs">
-						<a href="work-single.html">
+						<a href="/">
 							<span class="nav-arrow scrolla-element-anim-1 scroll-animate" data-animate="active">
-								<span>Next Project</span>
+								<span>Go back</span>
 							</span>
-							<span class="h-title splitting-text-anim-2 scroll-animate" data-splitting="chars" data-animate="active">
-								<span>Gooir</span>
-							</span>
+							
 						</a>
 					</div>
     		</div>
@@ -412,20 +352,20 @@
 	<!-- cursor -->
 	<div class="cursor"></div>
 
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.validate.min.js"></script>
-  <script src="assets/js/bootstrap.js"></script>
-  <script src="assets/js/swiper.js"></script>
-  <script src="assets/js/splitting.js"></script>
-  <script src="assets/js/jarallax.min.js"></script>
-  <script src="assets/js/magnific-popup.js"></script>
-  <script src="assets/js/imagesloaded.pkgd.js"></script>
-  <script src="assets/js/isotope.pkgd.js"></script>
-  <script src="assets/js/jquery.scrolla.js"></script>
-  <script src="assets/js/skrollr.js"></script>
-  <script src="assets/js/jquery.cookie.js"></script>
-  <script src="assets/js/typed.js"></script>
-  <script src="assets/js/common.js"></script>
+  <script src="{{asset('assets/js/jquery.min.js')}}"></script>
+  <script src="{{asset('assets/js/jquery.validate.min.js')}}"></script>
+  <script src="{{asset('assets/js/bootstrap.js')}}"></script>
+  <script src="{{asset('assets/js/swiper.js')}}"></script>
+  <script src="{{asset('assets/js/splitting.js')}}"></script>
+  <script src="{{asset('assets/js/jarallax.min.js')}}"></script>
+  <script src="{{asset('assets/js/magnific-popup.js')}}"></script>
+  <script src="{{asset('assets/js/imagesloaded.pkgd.js')}}"></script>
+  <script src="{{asset('assets/js/isotope.pkgd.js')}}"></script>
+  <script src="{{asset('assets/js/jquery.scrolla.js')}}"></script>
+  <script src="{{asset('assets/js/skrollr.js')}}"></script>
+  <script src="{{asset('assets/js/jquery.cookie.js')}}"></script>
+  <script src="{{asset('assets/js/typed.js')}}"></script>
+  <script src="{{asset('assets/js/common.js')}}"></script>
 
 </body>
 </html>

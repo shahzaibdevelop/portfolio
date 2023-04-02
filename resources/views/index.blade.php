@@ -405,152 +405,36 @@
           <div class="container">
 
             <div class="works-box">
-              <div class="filter-links scrolla-element-anim-1 scroll-animate" data-animate="active">
-                <a href="#" class="lui-subtitle active" data-href=".works-col"> All </a>
-                <a href="#" class="lui-subtitle" data-href=".sorting-ui-ux-design"> UI UX Design </a>
-                <a href="#" class="lui-subtitle" data-href=".sorting-photo"> Photography </a>
-                <a href="#" class="lui-subtitle" data-href=".sorting-development"> Development </a>
-                <a href="#" class="lui-subtitle" data-href=".sorting-branding"> Branding </a>
-              </div>
+              
               <div class="works-items works-masonry-items row">
-                <div class="works-col col-xs-12 col-sm-12 col-md-12 col-lg-12 sorting-branding sorting-photo ">
-                  <div class="works-item scrolla-element-anim-1 scroll-animate" data-animate="active">
-                    <div class="image">
-                      <div class="img">
-                        <a href="work-single.html">
-                          <img decoding="async" src="assets/images/work4.jpeg" alt="Zorro" >
-                          <span class="overlay"></span>
-                        </a>
+                  @foreach ($portfolio as $portfolios)
+                  
+                  <div class="works-col col-xs-12 col-sm-12 col-md-12 col-lg-12 sorting-branding sorting-photo ">
+                    <div class="works-item scrolla-element-anim-1 scroll-animate" data-animate="active">
+                      <div class="image">
+                        <div class="img">
+                          <a href="work-single.html">
+                           
+                            <img decoding="async" src="upload_images/{{$portfolios->path}}" alt="Zorro" >
+                            <span class="overlay"></span>
+                          </a>
+                        </div>
                       </div>
-                    </div>
-                    <div class="desc">
-                      <span class="category"> Branding, Photography </span>
-                      <h5 class="name">
-                        <a href="work-single.html">Zorro</a>
-                      </h5>
-                      <div class="text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                      <div class="desc">
+                        <span class="category"> {{$portfolios->tags}}</span>
+                        <h5 class="name">
+                          <a href="work-single.html">{{$portfolios->title}}</a>
+                        </h5>
+                        <div class="text">
+                          <p>{{$portfolios->description}}</p>
+                        </div>
+                        <a href="work-single/{{$portfolios->id}}" class="lnk">See project</a>
                       </div>
-                      <a href="work-single.html" class="lnk">See project</a>
+                      <div class="bg-img" style="background-image: url(assets/images/pat-2.png);"></div>
                     </div>
-                    <div class="bg-img" style="background-image: url(assets/images/pat-2.png);"></div>
                   </div>
-                </div>
-                <div class="works-col col-xs-12 col-sm-12 col-md-12 col-lg-12 sorting-branding sorting-ui-ux-design ">
-                  <div class="works-item scrolla-element-anim-1 scroll-animate" data-animate="active">
-                    <div class="image">
-                      <div class="img">
-                        <a href="work-single.html">
-                          <img decoding="async" src="assets/images/work2.jpeg" alt="Gooir" >
-                          <span class="overlay"></span>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="desc">
-                      <span class="category"> Branding, UI UX Design </span>
-                      <h5 class="name">
-                        <a href="work-single.html">Gooir</a>
-                      </h5>
-                      <div class="text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                      </div>
-                      <a href="work-single.html" class="lnk">See project</a>
-                    </div>
-                    <div class="bg-img" style="background-image: url(assets/images/pat-2.png);"></div>
-                  </div>
-                </div>
-                <div class="works-col col-xs-12 col-sm-12 col-md-12 col-lg-12 sorting-development sorting-ui-ux-design ">
-                  <div class="works-item scrolla-element-anim-1 scroll-animate" data-animate="active">
-                    <div class="image">
-                      <div class="img">
-                        <a href="work-single.html">
-                          <img decoding="async" src="assets/images/work7.jpg" alt="Explore" >
-                          <span class="overlay"></span>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="desc">
-                      <span class="category"> Development, UI UX Design </span>
-                      <h5 class="name">
-                        <a href="work-single.html">Explore</a>
-                      </h5>
-                      <div class="text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                      </div>
-                      <a href="work-single.html" class="lnk">See project</a>
-                    </div>
-                    <div class="bg-img" style="background-image: url(assets/images/pat-2.png);"></div>
-                  </div>
-                </div>
-                <div class="works-col col-xs-12 col-sm-12 col-md-12 col-lg-12 sorting-branding sorting-photo ">
-                  <div class="works-item scrolla-element-anim-1 scroll-animate" data-animate="active">
-                    <div class="image">
-                      <div class="img">
-                        <a href="work-single.html">
-                          <img decoding="async" src="assets/images/work1.jpeg" alt="Mozar" >
-                          <span class="overlay"></span>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="desc">
-                      <span class="category"> Branding, Photography </span>
-                      <h5 class="name">
-                        <a href="work-single.html">Mozar</a>
-                      </h5>
-                      <div class="text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                      </div>
-                      <a href="work-single.html" class="lnk">See project</a>
-                    </div>
-                    <div class="bg-img" style="background-image: url(assets/images/pat-2.png);"></div>
-                  </div>
-                </div>
-                <div class="works-col col-xs-12 col-sm-12 col-md-12 col-lg-12 sorting-development sorting-ui-ux-design ">
-                  <div class="works-item scrolla-element-anim-1 scroll-animate" data-animate="active">
-                    <div class="image">
-                      <div class="img">
-                        <a href="work-single.html">
-                          <img decoding="async" src="assets/images/single8.jpg" alt="Stay Fit" >
-                          <span class="overlay"></span>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="desc">
-                      <span class="category"> Development, UI UX Design </span>
-                      <h5 class="name">
-                        <a href="work-single.html">Stay Fit</a>
-                      </h5>
-                      <div class="text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                      </div>
-                      <a href="work-single.html" class="lnk">See project</a>
-                    </div>
-                    <div class="bg-img" style="background-image: url(assets/images/pat-2.png);"></div>
-                  </div>
-                </div>
-                <div class="works-col col-xs-12 col-sm-12 col-md-12 col-lg-12 sorting-development sorting-photo ">
-                  <div class="works-item scrolla-element-anim-1 scroll-animate" data-animate="active">
-                    <div class="image">
-                      <div class="img">
-                        <a href="work-single.html">
-                          <img decoding="async" src="assets/images/single6.jpg" alt="Kana" >
-                          <span class="overlay"></span>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="desc">
-                      <span class="category"> Development, Photography </span>
-                      <h5 class="name">
-                        <a href="work-single.html">Kana</a>
-                      </h5>
-                      <div class="text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                      </div>
-                      <a href="work-single.html" class="lnk">See project</a>
-                    </div>
-                    <div class="bg-img" style="background-image: url(assets/images/pat-2.png);"></div>
-                  </div>
-                </div>
+                  @endforeach
+              
               </div>
               <div class="load-more-link">
                 <a href="works.html" class="btn scrolla-element-anim-1 scroll-animate" data-animate="active">

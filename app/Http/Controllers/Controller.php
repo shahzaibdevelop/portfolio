@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Portfolio;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -10,6 +11,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
 use App\Service;
 use App\Skill;
+use Illuminate\Support\Facades\DB;
 
 class Controller extends BaseController
 {
@@ -17,6 +19,21 @@ class Controller extends BaseController
     public function index(){
         $service = Service::get()->all();
         $skill = Skill::get()->all();
+       
+        // $portfolio = DB::table('portfolios')
+        // ->join('images', 'images.image_id', '=', 'portfolios.id')
+        // ->select(DB::raw('portfolios.id, GROUP_CONCAT(DISTINCT images.path SEPARATOR ";") as paths'), 'portfolios.*')
+        // ->where('images.type', 'portfolio')
+        // ->groupBy('portfolios.id')
+        // ->get();
+        $portfolio = DB::table('portfolios')
+        ->join('images', 'images.image_id', '=', 'portfolios.id')
+        ->select(DB::raw('portfolios.id, SUBSTRING_INDEX(GROUP_CONCAT(DISTINCT images.path ORDER BY images.id SEPARATOR ";"), ";", 1) as path'), 'portfolios.*')
+        ->where('images.type', 'portfolio')
+        ->groupBy('portfolios.id')
+        ->get();
+
+
         return view('index',get_defined_vars());
     }
 
