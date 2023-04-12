@@ -178,8 +178,8 @@
 											<div class="tab-content">
 												<div class="tab-pane active" id="side13">
 													<ul class="sidemenu-list">
-                                                        <li><a href="shop.html" class="slide-item"> Experience</a></li>
-                                                        <li><a href="shop-description.html" class="slide-item">Knowledge</a></li>
+                                                        <li><a href="admin-education" class="slide-item"> Education</a></li>
+                                                        <li><a href="admin-experience" class="slide-item">Experience</a></li>
                                              
 													</ul>
                                                    
@@ -193,7 +193,7 @@
                             
                             
                             <li class="slide">
-                                <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i
+                                <a class="side-menu__item" data-bs-toggle="slide" href="admin-testimonial"><i
                                         class="side-menu__icon fe fe-folder"></i><span class="side-menu__label">Testimonials</span><i
                                         class="angle fe fe-chevron-right hor-angle"></i>
                                 </a>

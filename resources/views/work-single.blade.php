@@ -53,7 +53,7 @@
 
             <!-- logo -->
             <div class="logo">
-              <a href="index.html">
+              <a href="/">
                 <img width="500px" height="500px"  src="{{asset('assets/images/logo2.gif')}}" alt="" >
               </a>
             </div>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Education;
+use App\Experience;
 use App\Portfolio;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -33,7 +35,9 @@ class Controller extends BaseController
         ->groupBy('portfolios.id')
         ->get();
 
+        $education = Education::orderby('id','DESC')->get();
 
+        $experience = Experience::orderby('id','DESC')->get();
         return view('index',get_defined_vars());
     }
 

@@ -64,7 +64,7 @@
 
             <!-- logo -->
             <div class="logo" style="width:180px;height:auto;padding-bottom:10px;">
-              <a href="index.html">
+              <a href="/">
                 <img width="500px" height="500px" src="assets/images/logo2.gif" alt="Logo"  >
               </a>
             </div>
@@ -483,60 +483,29 @@
                   <span> Education </span>
                 </h5>
                 <div class="history-items">
+                  @foreach ($education as $edu )
                   <div class="history-item lui-collapse-item opened scrolla-element-anim-1 scroll-animate" data-animate="active">
                     <h6 class="name lui-collapse-btn active">
-                      <span> CoderHouse Courses </span>
+                      <span> {{$edu->institute_name}} </span>
                     </h6>
                     <div class="history-content">
                       <div class="subname">
-                        <span> Backend Programming </span>
+                        <span> {{$edu->degree_name}}</span>
                       </div>
                       <div class="date lui-subtitle">
-                        <span> 2014 - 2016 </span>
+                        <span> {{$edu->start_year}} - {{$edu->end_year}} </span>
                       </div>
                       <div class="text">
                         <div>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                          <p>{{$edu->description}}</p>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="history-item lui-collapse-item scrolla-element-anim-1 scroll-animate" data-animate="active">
-                    <h6 class="name lui-collapse-btn">
-                      <span> Lviv National Academy of Arts </span>
-                    </h6>
-                    <div class="history-content">
-                      <div class="subname">
-                        <span> Faculty of Design </span>
-                      </div>
-                      <div class="date lui-subtitle">
-                        <span> 2012 - 2014 </span>
-                      </div>
-                      <div class="text">
-                        <div>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="history-item lui-collapse-item scrolla-element-anim-1 scroll-animate" data-animate="active">
-                    <h6 class="name lui-collapse-btn">
-                      <span> IT Future </span>
-                    </h6>
-                    <div class="history-content">
-                      <div class="subname">
-                        <span> High School </span>
-                      </div>
-                      <div class="date lui-subtitle">
-                        <span> 2010 - 2012 </span>
-                      </div>
-                      <div class="text">
-                        <div>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                    
+                  @endforeach
+               
+                  
                 </div>
 
               </div>
@@ -546,61 +515,29 @@
                   <span> Experience </span>
                 </h5>
                 <div class="history-items">
+                  @foreach ($experience as $exp)
+                    
                   <div class="history-item lui-collapse-item opened scrolla-element-anim-1 scroll-animate" data-animate="active">
                     <h6 class="name lui-collapse-btn active">
-                      <span> UI Head &amp; Manager </span>
+                      <span> {{$exp->title}} </span>
                     </h6>
                     <div class="history-content">
                       <div class="subname">
-                        <span> Soft Tech Inc. </span>
+                        <span> {{$exp->company_name}}</span>
                       </div>
                       <div class="date lui-subtitle">
-                        <span> 2020 - <b>Present</b>
+                        <span> {{$exp->start_year}} - <b>{{$exp->end_year}}</b>
                         </span>
                       </div>
                       <div class="text">
                         <div>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                          <p>{{$exp->description}}</p>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="history-item lui-collapse-item scrolla-element-anim-1 scroll-animate" data-animate="active">
-                    <h6 class="name lui-collapse-btn">
-                      <span> UI / UX Specialist </span>
-                    </h6>
-                    <div class="history-content">
-                      <div class="subname">
-                        <span> Kana Design Studio </span>
-                      </div>
-                      <div class="date lui-subtitle">
-                        <span> 2018 - 2020 </span>
-                      </div>
-                      <div class="text">
-                        <div>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="history-item lui-collapse-item scrolla-element-anim-1 scroll-animate" data-animate="active">
-                    <h6 class="name lui-collapse-btn">
-                      <span> Plugins Developer </span>
-                    </h6>
-                    <div class="history-content">
-                      <div class="subname">
-                        <span> Fiverr.com </span>
-                      </div>
-                      <div class="date lui-subtitle">
-                        <span> 2016 - 2018 </span>
-                      </div>
-                      <div class="text">
-                        <div>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  @endforeach
+               
                 </div>
 
               </div>
