@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\PortfolioController;
 use Illuminate\Support\Facades\Route;
@@ -58,10 +59,13 @@ Route::group(['middleware' => 'adminAuth'], function(){
    //Testimonials
    Route::get('admin-testimonial',[TestimonialController::class,'admin_testimonial'])->name('testimonial');
    Route::post('add-testimonial',[TestimonialController::class,'add_testimonial']);
-//    Route::get('experience-edit/{id}',[ExperienceController::class,'editExperiencePage']);
-//    Route::post('edit-experience/{id}',[ExperienceController::class,'editExperience'])->name('editExperience');
-//    Route::get('experience-delete/{id}',[ExperienceController::class,'deleteExperience']);
+   Route::get('edit-testimonial/{id}',[TestimonialController::class,'editTestimonialPage']);
+   Route::post('testimonial-edit/{id}',[TestimonialController::class,'editTestimonial'])->name('editTestimonial');
+   Route::get('delete-testimonial/{id}',[TestimonialController::class,'deleteTestimonial']);
 
+    //Contact Messages
+    Route::get('admin-contact',[ContactController::class,'contactMessages'])->name('contactMessages');
+    Route::post('contactPOST',[ContactController::class,'contactPOST'])->name('contactPOST');
 
 
 

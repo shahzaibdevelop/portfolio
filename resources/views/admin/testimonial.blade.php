@@ -106,8 +106,8 @@
                                             </a></span></td>
                                             <td class="text-center align-middle">
                                                 <div class="btn-group align-top">
-                                                    <a href="edit-portfolio/{{$tt->id}}"  class="btn btn-sm btn-primary badge" data-target="#user-form-modal" data-bs-toggle="" type="button">Edit</a>
-                                                    <a href="delete-portfolio/{{$tt->id}}" class="btn btn-sm btn-primary badge" type="button"><i class="fa fa-trash"></i></a>
+                                                    <a href="edit-testimonial/{{$tt->id}}"  class="btn btn-sm btn-primary badge" data-target="#user-form-modal" data-bs-toggle="" type="button">Edit</a>
+                                                    <a href="delete-testimonial/{{$tt->id}}" class="btn btn-sm btn-primary badge" type="button"><i class="fa fa-trash"></i></a>
                                                 </div>
                                             </td>
                                         </tr>

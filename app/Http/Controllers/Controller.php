@@ -13,6 +13,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
 use App\Service;
 use App\Skill;
+use App\Testimonial;
 use Illuminate\Support\Facades\DB;
 
 class Controller extends BaseController
@@ -38,6 +39,8 @@ class Controller extends BaseController
         $education = Education::orderby('id','DESC')->get();
 
         $experience = Experience::orderby('id','DESC')->get();
+
+        $testimonial = Testimonial::orderby('id','DESC')->get();
         return view('index',get_defined_vars());
     }
 

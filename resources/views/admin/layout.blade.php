@@ -193,186 +193,20 @@
                             
                             
                             <li class="slide">
-                                <a class="side-menu__item" data-bs-toggle="slide" href="admin-testimonial"><i
+                                <a class="side-menu__item" data-bs-toggle="slide" href="{{route('testimonial')}}"><i
                                         class="side-menu__icon fe fe-folder"></i><span class="side-menu__label">Testimonials</span><i
                                         class="angle fe fe-chevron-right hor-angle"></i>
                                 </a>
                             </li>
                              
                             <li class="slide">
-                                <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i
-                                        class="side-menu__icon fe fe-folder"></i><span class="side-menu__label">Contact Details</span><i
+                                <a class="side-menu__item" data-bs-toggle="slide" href="{{route('contactMessages')}}"><i
+                                        class="side-menu__icon fe fe-folder"></i><span class="side-menu__label">Contact Messages</span><i
                                         class="angle fe fe-chevron-right hor-angle"></i>
                                 </a>
                             </li>
-                            <li class="sub-category">
-                                <h3>Blog</h3>
-                            </li>
-                            <li class="slide">
-                                <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i
-                                        class="side-menu__icon fe fe-users"></i><span
-                                        class="side-menu__label">Posts</span><i
-                                        class="angle fe fe-chevron-right"></i>
-                                </a>
-								<ul class="slide-menu">
-									<li class="panel sidetab-menu">
-										
-										<div class="panel-body tabs-menu-body p-0 border-0">
-											<div class="tab-content">
-												<div class="tab-pane active" id="side21">
-													<ul class="sidemenu-list">
-                                                        <li><a href="login.html" class="slide-item"> New Posts</a></li>
-                                                        <li><a href="register.html" class="slide-item"> All Posts</a></li>
-                                                        
-													</ul>
-                                                    <div class="menutabs-content mt-5 p-0">
-                                                        <div class="Annoucement_card">
-                                                            <div class="text-center">
-                                                                <div>
-                                                                    <h5 class="title mt-0 mb-1 ms-2 font-weight-bold tx-12"> Go for Premium Account </h5>
-                                                                    <div class="bg-layer">
-                                                                        <img src="adminassets/adminassets/images/media/37.png" alt="img" class="text-center mx-auto">
-                                                                    </div>
-                                                                    <p class="subtext mt-0 mb-0 ms-2 fs-13 text-center my-2"> $399.9 /Monthly</p>
-                                                                </div>
-                                                            </div>
-                                                            <button class="btn btn-block btn-primary mt-4 fs-14"> Upgrade</button>
-                                                        </div>
-                                                    </div>
-												</div>
-												<div class="tab-pane" id="side22">
-													<h5 class="mt-3 fw-600 mb-4">Recent Chats</h5>
-                                                    <div class="main-chat-list tab-pane">
-                                                        <div class="media border-0 px-1 new border-top-0">
-                                                            <div class="main-img-user online">
-                                                                <img alt="" src="adminassets/images/users/5.jpg">
-                                                            </div>
-                                                            <div class="media-body">
-                                                                <div class="media-contact-name">
-                                                                    <span>Raymart Santiago</span> <span>10 min</span>
-                                                                </div>
-                                                                <p> Hey! there I'm available </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="media border-0 px-1 new">
-                                                            <div class="main-img-user">
-                                                                <img alt="" src="adminassets/images/users/6.jpg"> <span>3</span>
-                                                            </div>
-                                                            <div class="media-body">
-                                                                <div class="media-contact-name">
-                                                                    <span>Ariana Monino</span> <span>30 min</span>
-                                                                </div>
-                                                                <p>Good Morning</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="media border-0 px-1 new">
-                                                            <div class="main-img-user online"><img alt="" src="adminassets/images/users/9.jpg"></div>
-                                                            <div class="media-body">
-                                                                <div class="media-contact-name">
-                                                                    <span>Reynante Labares</span> <span>9.40 am</span>
-                                                                </div>
-                                                                <p> Nice to meet you </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="media border-0 px-1 new">
-                                                            <span class="avatar avatar-md brround bg-danger-transparent text-danger">J</span>
-                                                            <div class="media-body">
-                                                                <div class="media-contact-name">
-                                                                    <span>Joyce Chua</span> <span>11.20 am</span>
-                                                                </div>
-                                                                <p> Hi, How are you? </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="media border-0 px-1 new">
-                                                            <div class="main-img-user"><img alt="" src="adminassets/images/users/4.jpg"></div>
-                                                            <div class="media-body">
-                                                                <div class="media-contact-name">
-                                                                    <span>Rolando Paloso</span> <span>1.38 pm</span>
-                                                                </div>
-                                                                <p> Hey! there I'm available </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="media border-0 px-1 new">
-                                                            <div class="main-img-user">
-                                                                <div class="avatar avatar-md brround bg-primary-transparent text-primary">D</div><span>1</span>
-                                                            </div>
-                                                            <div class="media-body">
-                                                                <div class="media-contact-name">
-                                                                    <span>Dexter dela Cruz</span> <span>4.08 pm</span>
-                                                                </div>
-                                                                <p>Typing...</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="media border-0 px-1 new">
-                                                            <div class="main-img-user"><img alt="" src="adminassets/images/users/21.jpg"></div>
-                                                            <div class="media-body">
-                                                                <div class="media-contact-name">
-                                                                    <span>Maricel Villalon</span> <span>8.09 pm</span>
-                                                                </div>
-                                                                <p> Hey! there I'm available </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="media border-0 px-1 new">
-                                                            <span class="avatar avatar-md brround bg-success-transparent text-success">M</span>
-                                                            <div class="media-body">
-                                                                <div class="media-contact-name">
-                                                                    <span>Maryjane Pechon</span> <span>1 day ago</span>
-                                                                </div>
-                                                                <p>I have some work</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="media border-0 px-1 new">
-                                                            <div class="main-img-user"><img alt="" src="adminassets/images/users/5.jpg"></div>
-                                                            <div class="media-body">
-                                                                <div class="media-contact-name">
-                                                                    <span>Lovely Dela Cruz</span> <span>3 days ago</span>
-                                                                </div>
-                                                                <p>I have some work</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="media border-0 px-1 new">
-                                                            <div class="avatar avatar-md brround bg-secondary-transparent"><i class="fe fe-user text-secondary"></i></div>
-                                                            <div class="media-body">
-                                                                <div class="media-contact-name">
-                                                                    <span>Daniel Padilla</span> <span>5 days ago</span>
-                                                                </div>
-                                                                <p>I have some work</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="media border-0 px-1 new">
-                                                            <div class="main-img-user"><img alt="" src="adminassets/images/users/3.jpg"></div>
-                                                            <div class="media-body">
-                                                                <div class="media-contact-name">
-                                                                    <span>John Pratts</span> <span>20/06/2021</span>
-                                                                </div>
-                                                                <p>I have some work</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="media border-0 px-1 new">
-                                                            <div class="main-img-user"><img alt="" src="adminassets/images/users/7.jpg"></div>
-                                                            <div class="media-body">
-                                                                <div class="media-contact-name">
-                                                                    <span>Socrates Itumay</span> <span>18/07/2021</span>
-                                                                </div>
-                                                                <p> Hey! there I'm available </p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="media border-0 px-1 new border-bottom-0">
-                                                            <div class="main-img-user"><img alt="" src="adminassets/images/users/6.jpg"></div>
-                                                            <div class="media-body">
-                                                                <div class="media-contact-name">
-                                                                    <span>Samuel Lerin</span> <span>29/07/2021</span>
-                                                                </div>
-                                                                <p> Hey! there I'm available </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-												</div>
-											</div>
-										</div>
-									</li>
-								</ul>
-                            </li>
+                            
+                          
                           
                         </ul>
                         <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191"
