@@ -9,6 +9,8 @@ use App\Http\Controllers\SkillController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\TestimonialController;
+use App\Http\Controllers\HomePageController;
+
 
 
 /*
@@ -65,14 +67,19 @@ Route::group(['middleware' => 'adminAuth'], function(){
 
     //Contact Messages
     Route::get('admin-contact',[ContactController::class,'contactMessages'])->name('contactMessages');
-    Route::post('contactPOST',[ContactController::class,'contactPOST'])->name('contactPOST');
+    //My Details
+    Route::get('admin-details',[HomePageController::class,'myDetails'])->name('myDetails');
+    Route::post('admin-details-post',[HomePageController::class,'detailsPost'])->name('detailsPost');
 
-
-
-
+    Route::post('admin-adminDetails-post',[HomePageController::class,'adminDetailsPost'])->name('admindetailsPost');
+    
+    
+    
+    
 });
 Route::get('admin', [Controller::class,'login'])->name('admin_login');
 Route::post('login',[Controller::class,'loginAdmin']);
 Route::get('work-single/{id}',[PortfolioController::class,'work_single']);
 Route::get('work',[PortfolioController::class,'work']);
 
+Route::post('contactPOST',[ContactController::class,'contactPOST'])->name('contactPOST');

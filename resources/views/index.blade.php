@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en-US">
 <head>
-
   <title>Shahzaib Hassan - Portfolio</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,6 +21,8 @@
   <link rel="stylesheet" href="assets/css/vendors/animate.css" type="text/css" media="all" >
   <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all" >
   <link rel="stylesheet" href="assets/css/dark.css" type="text/css" media="all" >
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
   <!-- Favicon -->
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -199,30 +200,52 @@
     							</div>
     							<h1 class="title splitting-text-anim-1 scroll-animate" data-splitting="chars" data-animate="active">
     								<span>
-    									<b>Shahzaib</b> Hassan </span>
+    									<b>{{$detail->fname}}</b>{{$detail->lname}} </span>
     							</h1>
-    							<div class="label lui-subtitle"> I am a<strong> Full Stack Developer</strong>
+    							<div class="label lui-subtitle"> I am a<strong> {{$detail->occupation}}</strong>
     							</div>
     						</div>
     						<div class="description">
     							<div>
-    								<p>If you're looking for a full stack developer with expertise in <strong>Laravel</strong>, <strong>Vue.js</strong>, <strong>Graphic designing</strong> and <strong>UI/UX design</strong>, I would be a great fit for your project. My portfolio website showcases my skills and previous work, and I'm confident that my experience and expertise can help you achieve your goals.</p>
+    								<p>{{$detail->description}}</p>
     							</div>
     							<div class="social-links">
-    								<a target="_blank" rel="nofollow" href="#">
+                    @if ($detail->twitter)
+    								<a target="_blank" rel="nofollow" href="{{$detail->twitter}}">
     									<i aria-hidden="true" class="fab fa-twitter"></i>
     								</a>
-    								<a target="_blank" rel="nofollow" href="#">
-    									<i aria-hidden="true" class="fab fa-dribbble"></i>
+                    @endif
+    							  @if ($detail->facebook)
+    								<a target="_blank" rel="nofollow" href="{{$detail->facebook}}">
+    									<i aria-hidden="true" class="fab fa-facebook"></i>
     								</a>
-    								<a target="_blank" rel="nofollow" href="#">
-    									<i aria-hidden="true" class="fab fa-behance"></i>
+                    @endif
+                    @if ($detail->instagram)
+    								<a target="_blank" rel="nofollow" href="{{$detail->instagram}}">
+    									<i aria-hidden="true" class="fab fa-instagram"></i>
     								</a>
+                    @endif
+                    @if ($detail->github)
+    								<a target="_blank" rel="nofollow" href="{{$detail->github}}">
+    									<i aria-hidden="true" class="fab fa-github"></i>
+    								</a>
+                    @endif
+                    @if ($detail->linkedin)
+    								<a target="_blank" rel="nofollow" href="{{$detail->linkedin}}">
+    									<i aria-hidden="true" class="fab fa-linkedin"></i>
+    								</a>
+                    @endif
+                    @if ($detail->youtube)
+    								<a target="_blank" rel="nofollow" href="{{$detail->youtube}}">
+    									<i aria-hidden="true" class="fab fa-youtube"></i>
+    								</a>
+                    @endif
+    								
     							</div>
     						</div>
     						<div class="bts">
-    							<a target="_blank" href="https://drive.google.com/" class="btn">
-    								<span>Download CV</span>
+    							<a target="_blank" href="https://{{$detail->resume}}" class="btn">
+    								<span>Download Resume</span>
     							</a>
     							<a href="#skills-section" class="btn-lnk"> My Skills </a>
     						</div>
@@ -236,13 +259,13 @@
     						<div class="info-list">
     							<ul>
     								<li>
-    									<span class="num">3 <strong>+</strong>
+    									<span class="num">{{$detail->experience}} <strong >+</strong>
     									</span>
     									<span class="value">Years of <strong>Experience</strong>
     									</span>
     								</li>
     								<li>
-    									<span class="num">12</span>
+    									<span class="num">{{$detail->projects}}</span>
     									<span class="value">Completed <strong>Projects</strong>
     									</span>
     								</li>
@@ -251,7 +274,7 @@
     					</div>
     				</div>
             <div class="lui-bgtitle">
-              <span> Web Developer </span>
+              <span> {{$detail->occupation}} </span>
             </div>
           </div>
 
@@ -636,11 +659,10 @@
 
       <!-- Section - Contacts -->
 			<section class="lui-section lui-gradient-bottom" id="contact-section">
-
         <!-- Heading -->
         <div class="lui-heading">
           <div class="container">
-
+            
             <div class="m-titles align-center">
               <h2 class="m-title splitting-text-anim-1 scroll-animate" data-splitting="words" data-animate="active">
                 <span> Contact Me </span>
@@ -670,7 +692,7 @@
                       <span> Address </span>
                     </div>
                     <div class="lui-text">
-                      <span> North Tower, Toronto, Canada </span>
+                      <span> {{$user->address}} </span>
                     </div>
                   </div>
                   <div class="numbers-item scrolla-element-anim-1 scroll-animate" data-animate="active">
@@ -692,7 +714,7 @@
                       <span> Email </span>
                     </div>
                     <div class="lui-text">
-                      <span> zoe.miller@mydomain.com </span>
+                      <span> <a style="text-decoration: none" class="text-dark" href="mailto:{{$user->email}}">{{$user->email}}</a></span>
                     </div>
                   </div>
                   <div class="numbers-item scrolla-element-anim-1 scroll-animate" data-animate="active">
@@ -703,66 +725,54 @@
                       <span> Phone </span>
                     </div>
                     <div class="lui-text">
-                      <span> +1 900 - 900 - 9000 </span>
+                      <span> <a target="_blank" class="text-dark" style="text-decoration: none" href="https://wa.me/{{$user->phone}}?text=Hi ! I have an idea in mind ">{{$user->phone}}</a></span>
                     </div>
                   </div>
                 </div>
 
               </div>
               <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+                @if (Session::has('msg'))
+                <script>
+                swal({
+                        title: "Message Sent !",
+                        text: "Your message has sent successfully",
+                        icon: "success",
+                        buttons: {
+                          confirm: {
+                            text: "OK",
+                            value: true,
+                            visible: true,
+                            className: "btn btn-primary",
+                            closeModal: true
+                          }
+                        }
+                      });
 
-                <div class="contacts-form scrolla-element-anim-1 scroll-animate" data-animate="active">
+                </script>
+                  
+                @endif
+                <div class="contacts-form scrolla-element-anim-1 scroll-animate" data-animate="active"> 
+                
                   <div class="bg-img" style="background-image: url(assets/images/pat-1.png);"></div>
                   <div class="contacts-form">
-                    <form id="cform" method="POST" action="{{route('contactPOST')}}">
-                      @csrf
-                      <div class="row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <div class="group">
-                            <label>
-                              Your Full Name <b>*</b>
-                              <input type="text" name="name" >
-                            </label>
-                          </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                          <div class="group">
-                            <label>
-                              Your Email Address <b>*</b>
-                              <input type="email" name="email" >
-                            </label>
-                          </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                          <div class="group">
-                            <label>
-                              Your Subject <b>*</b>
-                              <input type="text" name="subject" >
-                            </label>
-                          </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                          <div class="group">
-                            <label>
-                              Your Message <b>*</b>
-                              <textarea name="message"></textarea>
-                            </label>
-                          </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 align-right">
-                          <div class="terms-label">* Accept the terms and conditions.</div>
-                          <a type="submit" class="btn" >
-                            <span>Send Message</span>
-                          </a>
-                        </div>
-                      </div>
-                    </form>
-                    <div class="alert-success" style="display: none;">
-                      <p>Thanks, your message is sent successfully.</p>
-                    </div>
+                   <form action="contactPOST" method="POST" class="mb-5">
+                    @csrf
+                    <label for="name">Name :</label>
+                    <input type="text" name="name" id="name" class="mb-3">
+                    <label for="email">Email :</label>
+                    <input type="text" name="email" id="email" class="mb-3">
+                    <label for="subject">Subject :</label>
+                    <input type="text" name="subject" id="subject" class="mb-3">
+                    <label for="message">Message :</label>
+                    <textarea name="message" id="message" cols="30" rows="10" class="mb-3"></textarea>
+                    <input type="submit" class="w-100">
+                   </form>
                   </div>
-
                 </div>
+                
+           
+  
 
               </div>
             </div>
@@ -786,29 +796,68 @@
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 
               <div class="social-links scrolla-element-anim-1 scroll-animate" data-animate="active">
-                <a target="_blank" rel="nofollow" href="http://twitter.com">
-                  <i aria-hidden="true" class="fab fa-twitter"></i>
-                </a>
-                <a target="_blank" rel="nofollow" href="http://dribble.com">
-                  <i aria-hidden="true" class="fab fa-dribbble"></i>
-                </a>
-                <a target="_blank" rel="nofollow" href="http://behance.com">
-                  <i aria-hidden="true" class="fab fa-behance"></i>
-                </a>
+                <div class="social-links">
+                  @if ($detail->twitter)
+                  <a target="_blank" rel="nofollow" href="http://{{$detail->twitter}}">
+                    <i aria-hidden="true" class="fab fa-twitter"></i>
+                  </a>
+                  @endif
+                  @if ($detail->facebook)
+                  <a target="_blank" rel="nofollow" href="http://{{$detail->facebook}}">
+                    <i aria-hidden="true" class="fab fa-facebook"></i>
+                  </a>
+                  @endif
+                  @if ($detail->instagram)
+                  <a target="_blank" rel="nofollow" href="http://{{$detail->instagram}}">
+                    <i aria-hidden="true" class="fab fa-instagram"></i>
+                  </a>
+                  @endif
+                  @if ($detail->github)
+                  <a target="_blank" rel="nofollow" href="http://{{$detail->github}}">
+                    <i aria-hidden="true" class="fab fa-github"></i>
+                  </a>
+                  @endif
+                  @if ($detail->linkedin)
+                  <a target="_blank" rel="nofollow" href="http://{{$detail->linkedin}}">
+                    <i aria-hidden="true" class="fab fa-linkedin"></i>
+                  </a>
+                  @endif
+                  @if ($detail->youtube)
+                  <a target="_blank" rel="nofollow" href="http://{{$detail->youtube}}">
+                    <i aria-hidden="true" class="fab fa-youtube"></i>
+                  </a>
+                  @endif
+                  
+                </div>
               </div>
 
             </div>
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 
-              <div class="copyright-text align-center scrolla-element-anim-1 scroll-animate" data-animate="active">
-              &copy; <span id="current-year"></span> <strong>shahzaib.tk</strong>. All rights reserved
+              <div class="copyright-text align-center">
+                &copy; <span id="current-year"></span> <a style="color:#29A587;" id="website-url" href="#"></a> All rights reserved.
               </div>
+              
+              <script>
+                // Get the current year and set it in the HTML
+                const currentYear = new Date().getFullYear();
+                document.getElementById("current-year").textContent = currentYear;
+                
+                // Get the website URL and set it in the HTML
+                // const websiteUrl = window.location.href;
+                // document.getElementById("website-url").textContent = websiteUrl;
+                var websiteUrl = document.getElementById("website-url");
+                websiteUrl.href = window.location.href;
+                websiteUrl.textContent = window.location.hostname;
+              </script>
+              
+              
 
             </div>
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
 
               <div class="copyright-text align-right scrolla-element-anim-1 scroll-animate" data-animate="active">
-                Made with <span class="fa fa-heart text-danger"></span> by <strong>Shahzaib Hassan</strong>
+                Made with <span class="fa fa-heart text-danger"></span> by <strong>{{$detail->fname}} {{$detail->lname}}</strong>
               </div>
 
             </div>

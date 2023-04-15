@@ -15,7 +15,8 @@ class CreateHomePagesTable extends Migration
     {
         Schema::create('home_pages', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('fname');
+            $table->string('lname');
             $table->string('occupation');
             $table->string('description');
             $table->bigInteger('projects');

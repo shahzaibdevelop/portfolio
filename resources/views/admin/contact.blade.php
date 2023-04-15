@@ -29,57 +29,36 @@
                                         <tr>
                                            
                                             <th>Sn</th>
-                                            <th>Institute Name</th>
-                                            <th>Degree</th>
-                                            <th>Description</th>
-                                            <th>Start Year</th>
-                                            <th>End Year</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Subject</th>
+                                            <th>Message</th>
 
-                                            <th class="text-center">Actions</th>
                                         </tr>
                                     </thead>
-                                    {{-- <tbody>
-                                        @foreach ($education as $edu)
+                                    <tbody>
+                                        @foreach ($contact as $contacts)
                                             
                                         <tr>
                                             <td class="text-nowrap align-middle">{{$sn=$sn+1}}</td>
-                                            <td class="text-nowrap align-middle">{{$edu->institute_name}}</td>
-                                            <td class="text-nowrap align-middle"><span>{{$edu->degree_name}}</span></td>
-                                            <td class="text-nowrap align-middle"><span>{{$edu->description}} </span></td>
-                                            <td class="text-nowrap align-middle"><span>{{$edu->start_year}} </span></td>
-                                            <td class="text-nowrap align-middle"><span>{{$edu->end_year}} </span></td>
-
-
-                                            <td class="text-center align-middle">
-                                                <div class="btn-group align-top">
-                                                    <a href="education-edit/{{$edu->id}}"  class="btn btn-sm btn-primary badge" data-target="#user-form-modal" data-bs-toggle="" type="button">Edit</a> <a href="education-delete/{{$edu->id}}" class="btn btn-sm btn-primary badge" type="button"><i class="fa fa-trash"></i></a>
-                                                </div>
-                                                
-                                            </td>
+                                            <td class="text-nowrap align-middle">{{$contacts->name}}</td>
+                                            <td class="text-nowrap align-middle"><span>{{$contacts->email}}</span></td>
+                                            <td class="text-nowrap align-middle"><span>{{$contacts->subject}} </span></td>
+                                            <td class="text-nowrap align-middle"><span>{{$contacts->message}} </span></td>
+                                          
                                         </tr>
                                     
                                         @endforeach
                                       
-                                    </tbody> --}}
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-                    <div class="mb-5">
-                        <ul class="pagination float-end">
-                            <li class="page-item page-prev disabled">
-                                <a class="page-link" href="javascript:void(0)" tabindex="-1">Prev</a>
-                            </li>
-                            <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
-                            <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
-                            <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
-                            <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
-                            <li class="page-item"><a class="page-link" href="javascript:void(0)">5</a></li>
-                            <li class="page-item page-next">
-                                <a class="page-link" href="javascript:void(0)">Next</a>
-                            </li>
-                        </ul>
-                    </div>
+                    <div class="d-flex justify-content-end mb-5">
+                        {{ $contact->links() }}
+                      </div>
+                      
                 </div>
                 <!-- COL-END -->
             </div>

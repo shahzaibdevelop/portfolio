@@ -41,7 +41,7 @@
 
     <!-- GLOBAL-LOADER -->
     <div id="global-loader" >
-        <img src="{{asset('assets/images/logo2.gif')}}" width="500px" height="450px" class="loader-img" alt="Loader" style="position: absolute;top:50px;">
+        <img src="{{asset('assets/images/logo2.gif')}}" width="400px" height="400px" class="loader-img" alt="Loader" style="position: absolute;top:100px;">
     </div>
     <!-- /GLOBAL-LOADER -->
 
@@ -55,9 +55,9 @@
                     <div class="d-flex">
                         <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-bs-toggle="sidebar" href="javascript:void(0)"></a>
                         <!-- sidebar-toggle-->
-                        <a class="logo-horizontal " href="index.html">
-                            <img src="adminassets/images/brand/logo-white.png" class="header-brand-img desktop-logo" alt="logo">
-                            <img src="adminassets/images/brand/logo-dark.png" class="header-brand-img light-logo1"
+                        <a class="logo-horizontal " href="adminPage">
+                            <img src="{{asset('assets/images/logo2.gif')}}" width="100" height="170"  class="header-brand-img desktop-logo" alt="logo">
+                            <img src="{{asset('assets/images/logo2.gif')}}" width="100" height="170"  class="header-brand-img light-logo1"
                                 alt="logo">
                         </a>
                         <!-- LOGO -->
@@ -123,7 +123,7 @@
                 <div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
                 <div class="app-sidebar">
                     <div class="side-header">
-                        <a class="header-brand1" href="index.html">
+                        <a class="header-brand1" href="adminPage">
                             <img src="{{asset('assets/images/logo2.gif')}}" class="header-brand-img desktop-logo" style="margin-top: 50px;margin-bottom:50px; width:150px;height:150px;" alt="logo">
                             <img src="{{asset('assets/images/logo2.gif')}}" class="header-brand-img toggle-logo" style="margin-top: 50px;margin-bottom:50px; width:50px;height:50px;"
                                 alt="logo">
@@ -143,7 +143,7 @@
                                 <h3>Main</h3>
                             </li>
                             <li class="slide">
-                                <a class="side-menu__item has-link" data-bs-toggle="slide" href="#"><i
+                                <a class="side-menu__item has-link"  href="adminPage"><i
                                         class="side-menu__icon fe fe-home"></i><span
                                         class="side-menu__label">Dashboard</span></a>
                             </li>
@@ -205,7 +205,12 @@
                                         class="angle fe fe-chevron-right hor-angle"></i>
                                 </a>
                             </li>
-                            
+                            <li class="slide">
+                                <a class="side-menu__item" data-bs-toggle="slide" href="{{route('myDetails')}}"><i
+                                        class="side-menu__icon fe fe-folder"></i><span class="side-menu__label">My Details</span><i
+                                        class="angle fe fe-chevron-right hor-angle"></i>
+                                </a>
+                            </li>
                           
                           
                         </ul>
@@ -800,12 +805,25 @@
             <div class="container">
                 <div class="row align-items-center flex-row-reverse">
                     <div class="col-md-12 col-sm-12 text-center">
-                        Copyright © <span id="year"></span> <a href="javascript:void(0)">shahzaib.tk</a>. Designed with <span
-                            class="fa fa-heart text-danger"></span> by <a href="javascript:void(0)"> Shahzaib Hassan </a> All rights reserved.
+                        Copyright © <span id="year"></span> <a id="website-link" href="#">shahzaib.tk</a>. 
+                        Designed with <span class="fa fa-heart text-danger"></span> by 
+                        <a href="javascript:void(0)"> Shahzaib Hassan </a> All rights reserved.
                     </div>
                 </div>
             </div>
         </footer>
+        
+        <script>
+            // Get the current year
+            var year = new Date().getFullYear();
+            document.getElementById("year").innerHTML = year;
+        
+            // Get the website URL and set the href attribute of the website link
+            var websiteLink = document.getElementById("website-link");
+            websiteLink.href = window.location.href;
+            websiteLink.textContent = window.location.hostname;
+        </script>
+        
         <!-- FOOTER END -->
 
     <!-- BACK-TO-TOP -->
