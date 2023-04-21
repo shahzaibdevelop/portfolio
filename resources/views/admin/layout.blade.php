@@ -144,7 +144,7 @@
                             </li>
                             <li class="slide">
                                 <a class="side-menu__item has-link"  href="{{route('adminDashboard')}}"><i
-                                        class="side-menu__icon fe fe-home"></i><span
+                                        class="side-menu__icon fe fe-grid"></i><span
                                         class="side-menu__label">Dashboard</span></a>
                             </li>
                             <li class="sub-category">
@@ -152,22 +152,22 @@
                             </li>
                             <li class="slide">
                                 <a class="side-menu__item has-link" data-bs-toggle="slide" href="{{route('adminServices')}}"><i
-                                        class="side-menu__icon fe fe-home"></i><span
+                                        class="side-menu__icon fe fe-briefcase"></i><span
                                         class="side-menu__label">Services</span></a>
                             </li>
                             <li class="slide">
                                 <a class="side-menu__item has-link" data-bs-toggle="slide" href="{{route('adminSkills')}}"><i
-                                        class="side-menu__icon fe fe-home"></i><span
+                                        class="side-menu__icon fe fe-trending-up"></i><span
                                         class="side-menu__label">Skills</span></a>
                             </li>
                             <li class="slide">
                                 <a class="side-menu__item has-link" data-bs-toggle="slide" href="{{route('adminPortfolio')}}"><i
-                                        class="side-menu__icon fe fe-home"></i><span
+                                        class="side-menu__icon fe fe-paperclip"></i><span
                                         class="side-menu__label">Portfolio</span></a>
                             </li>
                             <li class="slide">
                                 <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i
-                                        class="side-menu__icon fe fe-shopping-bag"></i><span
+                                        class="side-menu__icon fe fe-file"></i><span
                                         class="side-menu__label">Resume</span><i
                                         class="angle fe fe-chevron-right"></i>
                                 </a>
@@ -194,20 +194,20 @@
                             
                             <li class="slide">
                                 <a class="side-menu__item" data-bs-toggle="slide" href="{{route('testimonial')}}"><i
-                                        class="side-menu__icon fe fe-folder"></i><span class="side-menu__label">Testimonials</span><i
+                                        class="side-menu__icon fe fe-user-plus"></i><span class="side-menu__label">Testimonials</span><i
                                         class="angle fe fe-chevron-right hor-angle"></i>
                                 </a>
                             </li>
                              
                             <li class="slide">
                                 <a class="side-menu__item" data-bs-toggle="slide" href="{{route('contactMessages')}}"><i
-                                        class="side-menu__icon fe fe-folder"></i><span class="side-menu__label">Contact Messages</span><i
+                                        class="side-menu__icon fe fe-message-circle"></i><span class="side-menu__label">Contact Messages</span><i
                                         class="angle fe fe-chevron-right hor-angle"></i>
                                 </a>
                             </li>
                             <li class="slide">
                                 <a class="side-menu__item" data-bs-toggle="slide" href="{{route('myDetails')}}"><i
-                                        class="side-menu__icon fe fe-folder"></i><span class="side-menu__label">My Details</span><i
+                                        class="side-menu__icon fe fe-user"></i><span class="side-menu__label">My Details</span><i
                                         class="angle fe fe-chevron-right hor-angle"></i>
                                 </a>
                             </li>
