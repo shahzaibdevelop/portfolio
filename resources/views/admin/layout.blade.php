@@ -33,6 +33,14 @@
     <!-- INTERNAL Switcher css -->
     <link href="{{asset('adminassets/switcher/css/switcher.css')}}" rel="stylesheet">
     <link href="{{asset('adminassets/switcher/demo.css')}}" rel="stylesheet">
+    <style>
+        .side-menu .side-menu__icon ,.app-sidebar__toggle,.header-right-icons .nav-link.icon,.responsive-navbar .profile-1 .dropdown-item .dropdown-icon{
+            color: #252525;
+        }
+        #back-to-top{
+            background: #252525;
+        }
+    </style>
     @yield('style')
 </head>
 
@@ -89,18 +97,24 @@
                                         <!-- SIDE-MENU -->
                                         <div class="dropdown d-flex profile-1">
                                             <a href="javascript:void(0)" data-bs-toggle="dropdown" class="nav-link leading-none d-flex">
-                                                <img src="{{asset('adminassets/images/users/21.jpg')}}" alt="profile-user"
-                                                    class="avatar  profile-user brround cover-image">
+                                                {{-- <img src="{{asset('adminassets/images/users/21.jpg')}}" alt="profile-user"
+                                                    class="avatar  profile-user brround cover-image"> --}}
+                                                 
+                                                    <i class="mdi mdi-account" style="color:#252525" ></i>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                                                 <div class="drop-heading">
                                                     <div class="text-center">
-                                                        <h5 class="text-dark mb-0 fs-14 fw-semibold">Percy Kewshun</h5>
+                                                        <h5 class="text-dark mb-0 fs-14 fw-semibold"><?php 
+                                                          $user = \App\User::find(\Auth::id());
+
+
+                                                            ?> {{$user->name}}</h5>
                                                         <small class="text-muted">Senior Admin</small>
                                                     </div>
                                                 </div>
                                                 <div class="dropdown-divider m-0"></div>
-                                                <a class="dropdown-item" href="profile.html">
+                                                <a class="dropdown-item" href="{{route('myDetails')}}">
                                                     <i class="dropdown-icon fe fe-user"></i> Profile
                                                 </a>
                                                
