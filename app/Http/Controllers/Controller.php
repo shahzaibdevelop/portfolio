@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\File;
 use App\Contact;
 use App\Education;
 use App\Experience;
@@ -50,10 +50,9 @@ class Controller extends BaseController
 
 
     public function login(){
-        if(Auth::check())
-        {
-            return view('admin.index');
-        }
+       if(Auth::check()){
+        return redirect()->route('adminDashboard');
+       }
         return view('admin.login');
     }
     public function adminPage(){
@@ -87,4 +86,6 @@ class Controller extends BaseController
         Auth::logout();
         return redirect('admin');
     }
+
+  
 }

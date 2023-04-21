@@ -8,7 +8,7 @@ use App\Image;
 use App\Portfolio;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\File;
 class PortfolioController extends Controller
 {
    public function admin_portfolio(){
@@ -58,16 +58,41 @@ class PortfolioController extends Controller
 
    public function edit_portfolio($id){
     $portfolio = Portfolio::find($id);
+    $image = Image::where('image_id',$id)->get();
     return view('admin.edit-portfolio',get_defined_vars());
    }
 
    public function portfolio_edit(Request $request,$id){
         $portfolio = Portfolio::find($id);
+        $images= Image::where('image_id',$id)->get();
         $portfolio->title = $request->input('title');
         $portfolio->description = $request->input('description');
         $portfolio->tags = $request->tags;
         $portfolio->technology = $request->technology;
         $portfolio->year = $request->year;
+        
+        if ($request->hasFile('images')) {
+            //Delete Old Image
+            foreach($images as $image){
+                $file = public_path('upload_images/'.$image->path);
+                $del=  File::delete($file);
+            }
+            foreach ($request->file('images') as $image) {
+                if ($image->isValid()) {
+                    $oldimage = Image::where('image_id',$id);
+                    $oldimage->delete();
+                    $imagetable = new Image();
+                    $imgName = time() . rand(1000, 9999999) . "-" . str_replace(" ", "_", $image->getClientOriginalName());
+                    $image->move(public_path('upload_images'), $imgName);
+                    $imagetable->path = $imgName;
+                    $imagetable->image_id = $portfolio->id;
+                    $imagetable->type = 'portfolio';
+                    $imagetable->save();
+                }
+            }
+        }
+
+
         $portfolio->save();
         return redirect('admin-portfolio')->with('msg','Portfolio updated !');
    }
@@ -96,5 +121,19 @@ $paths = explode(';', $portfolio->paths);
     ->groupBy('portfolios.id')
     ->get();
     return view('works',get_defined_vars());
+   }
+
+
+   public function deleteportfolio($id){
+    $images = Image::where('image_id',$id)->get();
+    foreach ($images as $image) {
+        $delimage = public_path('upload_images/'.$image->path);
+        File::delete($delimage);
+        $image->delete();
+    }
+    $portfolio = Portfolio::find($id);
+    $portfolio->delete();
+    return back()->with('msg','Portfolio Deleted !');
+
    }
 }

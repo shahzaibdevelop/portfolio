@@ -20,7 +20,7 @@
                             <h4 class="card-title">Edit Skill</h4>
                         </div>
                         <div class="card-body">
-                            <form method="POST" action="/edit-skill/{{$skill->id}}">
+                            <form method="POST" action="edit-skill/{{$skill->id}}">
                                 @csrf
                                 <div class="">
                                     <div class="form-group">

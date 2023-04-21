@@ -20,7 +20,7 @@
                             <h4 class="card-title">Portfolio</h4>
                         </div>
                         <div class="card-body">
-                            <form method="POST" action="/edit-portfolio/{{$portfolio->id}}" >
+                            <form method="POST" action="{{route('editPortfolio',$portfolio->id)}}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="">
                                     <div class="form-group">
@@ -61,9 +61,19 @@
                                         <span class="text text-danger">{{$message}}</span>
                                     @enderror
                                     </div>
-                                   
-                                    
-                                </div>
+                                    <div class="form-group">
+                                        
+                                        <div class="form-group">
+                                            <label for="images">Images</label>
+                                            <input type="file" name="images[]" class="form-control-file" id="images" multiple>
+                                            <div id="images-preview" style="width:400px;height:auto;"></div>
+
+                                        </div>
+                                        @error('images')
+                                        <span class="text text-danger">{{$message}}</span>
+                                    @enderror
+                                    </div>
+                                  
                                 <button class="btn btn-dark" type="submit">Edit Portfolio</button>
                             </form>
                         </div>
@@ -79,4 +89,24 @@
 
     </div>
 </div>
+@endsection
+@section('script')
+
+<script>
+    $(function() {
+        $('#images').change(function() {
+            $('.preview').remove();
+            for (var i = 0; i < this.files.length; i++) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    var img = $('<img>').attr('src', e.target.result).addClass('preview');
+                    $('#images-preview').append(img);
+                }
+                reader.readAsDataURL(this.files[i]);
+            }
+            
+        });
+    });
+
+</script>
 @endsection

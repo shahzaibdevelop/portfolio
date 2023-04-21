@@ -16,9 +16,10 @@ class AdminAuth
     public function handle($request, Closure $next)
     {
         $isAuthenticationAdmin = Auth::check();
-        if (!$isAuthenticationAdmin){
-            return redirect()->route('admin_login');
+        if ($isAuthenticationAdmin) {
+            return $next($request);
         }
-        return $next($request);
+    
+        return redirect()->route('admin_login');
     }
 }

@@ -20,7 +20,7 @@
                             <h4 class="card-title">Services</h4>
                         </div>
                         <div class="card-body">
-                            <form method="POST" action="/add-service">
+                            <form method="POST" action="add-service">
                                 @csrf
                                 <div class="">
                                     <div class="form-group">

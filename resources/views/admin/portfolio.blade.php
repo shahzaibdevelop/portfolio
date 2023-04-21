@@ -20,7 +20,7 @@
                             <h4 class="card-title">Portfolio</h4>
                         </div>
                         <div class="card-body">
-                            <form method="POST" action="/add-portfolio" enctype="multipart/form-data">
+                            <form method="POST" action="{{route('addPortfolio')}}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="">
                                     <div class="form-group">

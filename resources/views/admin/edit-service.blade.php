@@ -19,7 +19,7 @@
                             <h4 class="card-title"> Edit Services </h4>
                         </div>
                         <div class="card-body">
-                            <form method="POST" action="/edit-service/{{$service->id}}">
+                            <form method="POST" action="edit-service/{{$service->id}}">
                                 @csrf
                                 <div class="">
                                     <div class="form-group">

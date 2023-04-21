@@ -143,7 +143,7 @@
                                 <h3>Main</h3>
                             </li>
                             <li class="slide">
-                                <a class="side-menu__item has-link"  href="adminPage"><i
+                                <a class="side-menu__item has-link"  href="{{route('adminDashboard')}}"><i
                                         class="side-menu__icon fe fe-home"></i><span
                                         class="side-menu__label">Dashboard</span></a>
                             </li>
@@ -151,17 +151,17 @@
                                 <h3>Content</h3>
                             </li>
                             <li class="slide">
-                                <a class="side-menu__item has-link" data-bs-toggle="slide" href="admin-services"><i
+                                <a class="side-menu__item has-link" data-bs-toggle="slide" href="{{route('adminServices')}}"><i
                                         class="side-menu__icon fe fe-home"></i><span
                                         class="side-menu__label">Services</span></a>
                             </li>
                             <li class="slide">
-                                <a class="side-menu__item has-link" data-bs-toggle="slide" href="admin-skills"><i
+                                <a class="side-menu__item has-link" data-bs-toggle="slide" href="{{route('adminSkills')}}"><i
                                         class="side-menu__icon fe fe-home"></i><span
                                         class="side-menu__label">Skills</span></a>
                             </li>
                             <li class="slide">
-                                <a class="side-menu__item has-link" data-bs-toggle="slide" href="admin-portfolio"><i
+                                <a class="side-menu__item has-link" data-bs-toggle="slide" href="{{route('adminPortfolio')}}"><i
                                         class="side-menu__icon fe fe-home"></i><span
                                         class="side-menu__label">Portfolio</span></a>
                             </li>
@@ -178,8 +178,8 @@
 											<div class="tab-content">
 												<div class="tab-pane active" id="side13">
 													<ul class="sidemenu-list">
-                                                        <li><a href="admin-education" class="slide-item"> Education</a></li>
-                                                        <li><a href="admin-experience" class="slide-item">Experience</a></li>
+                                                        <li><a href="{{route('education')}}" class="slide-item"> Education</a></li>
+                                                        <li><a href="{{route('experience')}}" class="slide-item">Experience</a></li>
                                              
 													</ul>
                                                    
